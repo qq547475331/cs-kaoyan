@@ -8,19 +8,28 @@
         {{ $yearMonth := split .Key "-" }}
         {{ $year := index $yearMonth 0 }}
         {{ $month := index $yearMonth 1 }}
-        <h2>{{ $year }}年{{ $month }}月</h2>
-        <ul>
-          {{ range .Pages }}
-            {{ if not .IsHome }}
-              {{ if not (in .RelPermalink "/archives/") }}
-                <li>
-                  {{ .Date | dateFormat "02日" }}: 
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
+        
+        {{ if ne $year "0001" }}
+          <h2>{{ $year }}年{{ $month }}月</h2>
+          <ul>
+            {{ range .Pages }}
+              {{ if not .IsHome }}
+                {{ if not (in .RelPermalink "/archives/") }}
+                  {{ if not (eq .Kind "taxonomy") }}
+                    {{ if not (eq .Kind "taxonomyTerm") }}
+                      {{ if not (eq .Type "_index") }}
+                        <li>
+                          {{ .Date | dateFormat "02日" }}: 
+                          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </li>
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
               {{ end }}
             {{ end }}
-          {{ end }}
-        </ul>
+          </ul>
+        {{ end }}
       {{ end }}
     {{ end }}
   </article>
