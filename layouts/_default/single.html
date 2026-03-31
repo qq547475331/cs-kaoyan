@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <article class="markdown book-article">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    
+    {{ if eq .Title "归档" }}
+      {{ range .Site.Pages.GroupByDate "2006-01" }}
+        {{ $yearMonth := split .Key "-" }}
+        {{ $year := index $yearMonth 0 }}
+        {{ $month := index $yearMonth 1 }}
+        <h2>{{ $year }}年{{ $month }}月</h2>
+        <ul>
+          {{ range .Pages }}
+            {{ if not .IsHome }}
+              {{ if not (in .RelPermalink "/archives/") }}
+                <li>
+                  {{ .Date | dateFormat "02日" }}: 
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </article>
+{{ end }}
