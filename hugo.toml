@@ -15,6 +15,30 @@ enableGitInfo = true
 
 [params]
   BookTheme = 'light'
-  BookSection = 'math'
   BookSearch = true
   BookKaTeX = true
+
+[[menu.home]]
+  name = '政治'
+  pageRef = '/zz/'
+  weight = 1
+
+[[menu.home]]
+  name = '英语'
+  pageRef = '/english/'
+  weight = 2
+
+[[menu.home]]
+  name = '数学'
+  pageRef = '/math/'
+  weight = 3
+
+[[menu.home]]
+  name = '计算机'
+  pageRef = '/cs/'
+  weight = 4
+
+[[menu.home]]
+  name = '归档'
+  pageRef = '/archives/'
+  weight = 5
