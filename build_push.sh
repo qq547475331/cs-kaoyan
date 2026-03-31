@@ -11,12 +11,7 @@ if [ $? -eq 0 ]; then
     echo "📦 正在添加文件..."
     git add .
     
-    echo "📝 请输入提交信息 (直接回车使用默认信息):"
-    read -r commit_msg
-    
-    if [ -z "$commit_msg" ]; then
-        commit_msg="构建站点 - $(date '+%Y-%m-%d %H:%M')"
-    fi
+    commit_msg="构建站点 - $(date '+%Y-%m-%d %H:%M')"
     
     git commit -m "$commit_msg"
     
