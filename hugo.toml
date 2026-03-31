@@ -1,0 +1,5 @@
+baseURL = 'https://cs.cloudsx.top/'
+languageCode = 'zh-cn'
+title = '我的考研复习笔记'
+theme = 'hugo-book'
+BookKaTeX = true
