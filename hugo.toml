@@ -17,6 +17,7 @@ enableGitInfo = true
   BookTheme = 'light'
   BookSearch = true
   BookKaTeX = true
+  BookSection = '*'
 
 [[menu.home]]
   name = '政治'
