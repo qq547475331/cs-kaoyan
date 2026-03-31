@@ -14,10 +14,12 @@
           <ul>
             {{ range .Pages }}
               {{ if eq .Kind "page" }}
-                <li>
-                  {{ .Date | dateFormat "02日" }}: 
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
+                {{ if ne .Title "归档" }}
+                  <li>
+                    {{ .Date | dateFormat "02日" }}: 
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </li>
+                {{ end }}
               {{ end }}
             {{ end }}
           </ul>
