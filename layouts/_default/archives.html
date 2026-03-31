@@ -3,14 +3,16 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
     
-    {{ range .Site.RegularPages.GroupByDate "2006-01" }}
+    {{ range .Site.Pages.GroupByDate "2006-01" }}
       <h2>{{ .Key | dateFormat "2006年01月" }}</h2>
       <ul>
         {{ range .Pages }}
-          <li>
-            {{ .Date | dateFormat "02日" }}: 
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </li>
+          {{ if not .IsHome }}
+            <li>
+              {{ .Date | dateFormat "02日" }}: 
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
         {{ end }}
       </ul>
     {{ end }}
