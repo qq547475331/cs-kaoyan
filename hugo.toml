@@ -2,4 +2,19 @@ baseURL = 'https://cs.cloudsx.top/'
 languageCode = 'zh-cn'
 title = '我的考研复习笔记'
 theme = 'hugo-book'
-BookKaTeX = true
+
+disablePathToLower = true
+enableGitInfo = true
+
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+[params]
+  BookTheme = 'light'
+  BookSection = 'math'
+  BookSearch = true
+  BookKaTeX = true
