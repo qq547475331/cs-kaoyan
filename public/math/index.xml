@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数学 on 我的考研复习笔记</title><link>http://localhost:1313/math/</link><description>Recent content in 数学 on 我的考研复习笔记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/math/index.xml" rel="self" type="application/rss+xml"/><item><title>第一章：极限的快速计算</title><link>http://localhost:1313/math/2026-3-30-%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate><guid>http://localhost:1313/math/2026-3-30-%E8%AE%B0%E5%BD%95/</guid><description>&lt;p&gt;$$
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数学 on 我的考研复习笔记</title><link>https://cs.cloudsx.top/math/</link><description>Recent content in 数学 on 我的考研复习笔记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://cs.cloudsx.top/math/index.xml" rel="self" type="application/rss+xml"/><item><title>第一章：极限的快速计算</title><link>https://cs.cloudsx.top/math/2026-3-30-%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate><guid>https://cs.cloudsx.top/math/2026-3-30-%E8%AE%B0%E5%BD%95/</guid><description>&lt;p&gt;$$
 \lim_{x \to 0} \frac{\tan x - \sin x}{x^2 \ln(1 + 2x)}
 $$&lt;/p&gt;
 &lt;p&gt;这是一道典型的求 &lt;strong&gt;$\frac{0}{0}$ 型&lt;/strong&gt; 未定式极限的题目。最简便的方法是利用&lt;strong&gt;等价无穷小替换&lt;/strong&gt;。&lt;/p&gt;
@@ -10,7 +10,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$x^2 \cdot \ln(1 + 2x) \sim x^2 \cdot 2x = 2x^3$$&lt;/p&gt;
 &lt;h3 id="2-分析分子"&gt;2. 分析分子&lt;a class="anchor" href="#2-%e5%88%86%e6%9e%90%e5%88%86%e5%ad%90"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;分子是 $\tan x - \sin x$。我们先做恒等变形：&lt;/p&gt;
-&lt;p&gt;$$\tan x - \sin x = \frac{\sin x}{\cos x} - \sin x = \sin x \left( \frac{1}{\cos x} - 1 \right) = \sin x \cdot \frac{1 - \cos x}{\cos x}$$&lt;/p&gt;</description></item><item><title>第一章：极限的快速计算</title><link>http://localhost:1313/math/2026-3-30_%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate><guid>http://localhost:1313/math/2026-3-30_%E8%AE%B0%E5%BD%95/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;
+&lt;p&gt;$$\tan x - \sin x = \frac{\sin x}{\cos x} - \sin x = \sin x \left( \frac{1}{\cos x} - 1 \right) = \sin x \cdot \frac{1 - \cos x}{\cos x}$$&lt;/p&gt;</description></item><item><title>第一章：极限的快速计算</title><link>https://cs.cloudsx.top/math/2026-3-30_%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate><guid>https://cs.cloudsx.top/math/2026-3-30_%E8%AE%B0%E5%BD%95/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;
 报录比什么的都可以查到 这个就不详细说了
 考试科目 数学二 英语二 政治 915数据结构加程序设计
 专业课看起来只有一本很简单，实际上还是挺有难度的，需要把数据结构学的比较透彻，考试的时候可能会涉及一点考纲没有的。总体来说，有难度，希望同学们可以明确自己的水平，理性报考
