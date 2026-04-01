@@ -24,7 +24,7 @@ test_page_*.png
 # Hugo 生成的文件
 /resources/
 /.hugo_build.lock
-/public/
+
 
 # 系统文件
 .DS_Store

@@ -6,3 +6,16 @@
 {{- end -}}
 {{- .Page.Store.Set "katex" true -}}
 {{- end -}}
+
+<!-- 修复超长行横向滚动问题 -->
+<style>
+.book-article {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.book-article p {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+</style>
