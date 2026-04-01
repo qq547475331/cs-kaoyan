@@ -1,12 +1,3 @@
-{{- if not (.Page.Store.Get "katex") -}}
-<link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}" />
-<script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
-{{- with resources.Get "katex.json" | minify -}}
-<script defer src="{{ "katex/auto-render.min.js" | relURL }}" onload="var article=document.querySelector('.book-article');if(article){renderMathInElement(article, {{ .Content | safeJS }});}"></script>
-{{- end -}}
-{{- .Page.Store.Set "katex" true -}}
-{{- end -}}
-
 <!-- 修复超长行横向滚动问题 -->
 <style>
 .book-page {
