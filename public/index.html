@@ -43,10 +43,14 @@ https://github.com/alex-shpak/hugo-book
   max-width: 100%;
   overflow-x: hidden;
 }
-.book-article p {
-  word-break: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
+.book-article p, .book-article li, .book-article div {
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+  max-width: 100% !important;
+}
+.book-article img {
+  max-width: 100% !important;
+  height: auto !important;
 }
 </style>
 
