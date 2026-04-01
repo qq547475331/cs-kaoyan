@@ -68,24 +68,36 @@ A 物质和意识何者为第一性 B 物质和意识是否具有同一性 C 物
 
 
 
-  
+  <link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script><script defer src="/katex/auto-render.min.js" onload="var article=document.querySelector('.book-article');if(article){renderMathInElement(article, {&#34;delimiters&#34;:[{&#34;left&#34;:&#34;$$&#34;,&#34;right&#34;:&#34;$$&#34;,&#34;display&#34;:true},{&#34;left&#34;:&#34;$&#34;,&#34;right&#34;:&#34;$&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\(&#34;,&#34;right&#34;:&#34;\\)&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\[&#34;,&#34;right&#34;:&#34;\\]&#34;,&#34;display&#34;:true}],&#34;throwOnError&#34;:false});}"></script>
 <style>
+ 
+html, body, .book-page, .book-article, .markdown {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  direction: ltr !important;
+}
+
+ 
 .book-page {
   max-width: 100%;
   overflow-x: hidden;
 }
+
 .book-article {
   max-width: 100%;
   overflow-x: hidden;
 }
-.book-article p {
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
+
+ 
+.book-article p,
 .book-article li {
   word-break: break-word;
   overflow-wrap: break-word;
+  white-space: normal !important;
 }
+
+ 
 .book-article img {
   max-width: 100%;
   height: auto;
