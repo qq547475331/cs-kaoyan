@@ -43,17 +43,14 @@ https://github.com/alex-shpak/hugo-book
 
   
 <style>
- 
 .book-page {
   max-width: 100%;
   overflow-x: hidden;
 }
- 
 .book-article {
   max-width: 100%;
   overflow-x: hidden;
 }
- 
 .book-article p {
   word-break: break-word;
   overflow-wrap: break-word;
@@ -62,7 +59,6 @@ https://github.com/alex-shpak/hugo-book
   word-break: break-word;
   overflow-wrap: break-word;
 }
- 
 .book-article img {
   max-width: 100%;
   height: auto;
@@ -576,7 +572,7 @@ $$\lim_{x \to 0} \frac{\tan x - \sin x}{x^2 \ln(1 + 2x)} = \lim_{x \to 0} \frac{
 <p>标准公式要求指数必须是底数中 $\triangle$ 的<strong>倒数</strong>。</p>
 <p>现在的 $\triangle$ 是 $-\frac{1}{1+x}$，它的倒数是 $-(1+x)$。</p>
 <p>我们强行在指数位置写上这个倒数，然后再补偿回来：</p>
-<span>\[ \lim_{x \to \infty} \left\{ \left[ 1 + \left( -\frac{1}{1+x} \right) \right]^{-(1+x)} \right\}^{\frac{1}{-(1+x)} \cdot 2x} \]</span><link rel="stylesheet" href="/katex/katex.min.css" /><script defer src="/katex/katex.min.js"></script><script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body, {&#34;delimiters&#34;:[{&#34;left&#34;:&#34;$$&#34;,&#34;right&#34;:&#34;$$&#34;,&#34;display&#34;:true},{&#34;left&#34;:&#34;$&#34;,&#34;right&#34;:&#34;$&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\(&#34;,&#34;right&#34;:&#34;\\)&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\[&#34;,&#34;right&#34;:&#34;\\]&#34;,&#34;display&#34;:true}]});"></script><h4 id="第三步分块求极限">第三步：分块求极限<a class="anchor" href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%88%86%e5%9d%97%e6%b1%82%e6%9e%81%e9%99%90">#</a></h4>
+<span>\[ \lim_{x \to \infty} \left\{ \left[ 1 + \left( -\frac{1}{1+x} \right) \right]^{-(1+x)} \right\}^{\frac{1}{-(1+x)} \cdot 2x} \]</span><link rel="stylesheet" href="/katex/katex.min.css" /><script defer src="/katex/katex.min.js"></script><script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body, {&#34;delimiters&#34;:[{&#34;left&#34;:&#34;$$&#34;,&#34;right&#34;:&#34;$$&#34;,&#34;display&#34;:true},{&#34;left&#34;:&#34;$&#34;,&#34;right&#34;:&#34;$&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\(&#34;,&#34;right&#34;:&#34;\\)&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\[&#34;,&#34;right&#34;:&#34;\\]&#34;,&#34;display&#34;:true}],&#34;throwOnError&#34;:false});"></script><h4 id="第三步分块求极限">第三步：分块求极限<a class="anchor" href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%88%86%e5%9d%97%e6%b1%82%e6%9e%81%e9%99%90">#</a></h4>
 <ul>
 <li><strong>中括号内：</strong> 根据定义，这就是 $e$。</li>
 <li><strong>大括号指数：</strong> 我们看剩下的部分 $\lim_{x \to \infty} \frac{2x}{-(1+x)}$。因为分子分母都是 $x$ 的一次方，结果就是系数比，即 $-2$。</li>
