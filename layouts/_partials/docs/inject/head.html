@@ -9,17 +9,39 @@
 
 <!-- 修复超长行横向滚动问题 -->
 <style>
+/* 限制整个页面容器 */
+.book-page {
+  max-width: 100%;
+  overflow-x: hidden;
+  min-width: 0;
+}
+/* 限制文章内容区域 */
 .book-article {
   max-width: 100%;
   overflow-x: hidden;
+  min-width: 0;
 }
-.book-article p, .book-article li, .book-article div {
+/* 强制所有文本元素换行 */
+.book-article * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+.book-article p, .book-article li, .book-article div, .book-article span, .book-article strong, .book-article em {
   word-break: break-all !important;
-  overflow-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+  white-space: normal !important;
   max-width: 100% !important;
 }
+/* 图片限制 */
 .book-article img {
   max-width: 100% !important;
   height: auto !important;
+}
+/* 处理 pre 和 code 块 */
+.book-article pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 </style>
