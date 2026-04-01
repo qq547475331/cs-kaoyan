@@ -13,35 +13,24 @@
 .book-page {
   max-width: 100%;
   overflow-x: hidden;
-  min-width: 0;
 }
 /* 限制文章内容区域 */
 .book-article {
   max-width: 100%;
   overflow-x: hidden;
-  min-width: 0;
 }
-/* 强制所有文本元素换行 */
-.book-article * {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
+/* 强制文本元素换行 */
+.book-article p {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
-.book-article p, .book-article li, .book-article div, .book-article span, .book-article strong, .book-article em {
-  word-break: break-all !important;
-  overflow-wrap: anywhere !important;
-  white-space: normal !important;
-  max-width: 100% !important;
+.book-article li {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 /* 图片限制 */
 .book-article img {
-  max-width: 100% !important;
-  height: auto !important;
-}
-/* 处理 pre 和 code 块 */
-.book-article pre {
   max-width: 100%;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  height: auto;
 }
 </style>
