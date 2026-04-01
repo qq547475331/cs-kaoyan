@@ -1,5 +1,5 @@
 ---
-title: "肖秀荣政治1000题（OCR原始版）"
+title: "肖秀荣政治1000题OCR原始版"
 date: 2026-04-02
 draft: false
 ---

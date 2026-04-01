@@ -5,6 +5,8 @@ theme = 'hugo-book'
 
 disablePathToLower = true
 enableGitInfo = true
+timeout = '300s'
+buildFuture = true
 
 [markup]
 [markup.goldmark.renderer]
