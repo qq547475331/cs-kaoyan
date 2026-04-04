@@ -393,7 +393,7 @@ async function renderPDF(pdfUrl, containerId) {
     // 渲染所有页面
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
       const page = await pdf.getPage(pageNum);
-      const scale = 1.0;
+      const scale = 2.0;
       const viewport = page.getViewport({ scale: scale });
       
       // 创建页面容器
@@ -404,8 +404,13 @@ async function renderPDF(pdfUrl, containerId) {
       // 创建 canvas 元素
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+      
+      // 提高清晰度，设置物理像素
+      const outputScale = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(viewport.width * outputScale);
+      canvas.height = Math.floor(viewport.height * outputScale);
+      canvas.style.width = Math.floor(viewport.width) + 'px';
+      canvas.style.height = Math.floor(viewport.height) + 'px';
       
       // 添加 canvas 到页面容器
       pageContainer.appendChild(canvas);
@@ -414,9 +419,11 @@ async function renderPDF(pdfUrl, containerId) {
       container.appendChild(pageContainer);
       
       // 渲染页面
+      const transform = outputScale !== 1 ? [outputScale, 0, 0, outputScale, 0, 0] : null;
       const renderContext = {
         canvasContext: context,
-        viewport: viewport
+        viewport: viewport,
+        transform: transform
       };
       
       await page.render(renderContext).promise;
