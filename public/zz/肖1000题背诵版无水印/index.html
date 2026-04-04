@@ -366,7 +366,7 @@ html, body, .book-page, .book-article, .markdown {
     <h1>肖1000题背诵版【无水印】</h1>
     <h1 id="肖1000题背诵版无水印">肖1000题背诵版【无水印】<a class="anchor" href="#%e8%82%961000%e9%a2%98%e8%83%8c%e8%af%b5%e7%89%88%e6%97%a0%e6%b0%b4%e5%8d%b0">#</a></h1>
 <h2 id="pdf-文档查看">PDF 文档查看<a class="anchor" href="#pdf-%e6%96%87%e6%a1%a3%e6%9f%a5%e7%9c%8b">#</a></h2>
-<div id="pdf-container" style="width: 100%; height: 600px; border: 1px solid #ccc; margin-bottom: 30px; overflow: auto;"></div>
+<div id="pdf-container" style="width: 100%; min-height: 600px; border: 1px solid #ccc; margin-bottom: 30px; padding: 20px;"></div>
 <h2 id="直接下载链接">直接下载链接<a class="anchor" href="#%e7%9b%b4%e6%8e%a5%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5">#</a></h2>
 <ul>
 <li><a href="/pdfs/%e8%82%961000%e9%a2%98%e7%b2%be%e7%ae%80%e8%83%8c%e8%af%b5%e7%89%88%e3%80%90%e6%97%a0%e6%b0%b4%e5%8d%b0%e3%80%91.pdf">肖1000题精简背诵版【无水印】</a></li>
@@ -377,19 +377,29 @@ import * as pdfjsLib from '/pdfjs/build/pdf.mjs';
 pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdfjs/build/pdf.worker.mjs';
 
 // 渲染 PDF 函数
-function renderPDF(pdfUrl, containerId) {
+async function renderPDF(pdfUrl, containerId) {
   const container = document.getElementById(containerId);
   
   // 清空容器
-  container.innerHTML = '';
+  container.innerHTML = '<p style="text-align: center; color: #666;">加载中...</p>';
   
-  // 创建 PDF 查看器
-  const loadingTask = pdfjsLib.getDocument(pdfUrl);
-  loadingTask.promise.then(function(pdf) {
-    // 显示第一页
-    pdf.getPage(1).then(function(page) {
+  try {
+    // 加载 PDF
+    const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+    
+    // 清空容器
+    container.innerHTML = '';
+    
+    // 渲染所有页面
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      const page = await pdf.getPage(pageNum);
       const scale = 1.0;
       const viewport = page.getViewport({ scale: scale });
+      
+      // 创建页面容器
+      const pageContainer = document.createElement('div');
+      pageContainer.style.marginBottom = '20px';
+      pageContainer.style.textAlign = 'center';
       
       // 创建 canvas 元素
       const canvas = document.createElement('canvas');
@@ -397,8 +407,11 @@ function renderPDF(pdfUrl, containerId) {
       canvas.height = viewport.height;
       canvas.width = viewport.width;
       
-      // 添加 canvas 到容器
-      container.appendChild(canvas);
+      // 添加 canvas 到页面容器
+      pageContainer.appendChild(canvas);
+      
+      // 添加页面容器到主容器
+      container.appendChild(pageContainer);
       
       // 渲染页面
       const renderContext = {
@@ -406,15 +419,14 @@ function renderPDF(pdfUrl, containerId) {
         viewport: viewport
       };
       
-      const renderTask = page.render(renderContext);
-      renderTask.promise.then(function() {
-        console.log('PDF 渲染完成');
-      });
-    });
-  }).catch(function(error) {
+      await page.render(renderContext).promise;
+    }
+    
+    console.log('PDF 全部页面渲染完成');
+  } catch (error) {
     console.error('PDF 加载失败:', error);
     container.innerHTML = '<p style="padding: 20px; color: red;">PDF 加载失败，请尝试直接下载</p>';
-  });
+  }
 }
 
 // 页面加载完成后渲染 PDF
